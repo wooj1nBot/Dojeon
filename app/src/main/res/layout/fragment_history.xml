@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.HistoryFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F6F6F6"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                android:src="@drawable/back"
+                android:textColor="@color/main" />
+
+            <TextView
+                android:id="@+id/tv_doj"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/pd_light"
+                android:text="진행중인 도전"
+                android:textColor="@color/main"
+                android:textSize="16sp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="30dp"
+                app:cardBackgroundColor="@color/main"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/pd_regu"
+                        android:gravity="center_horizontal"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/tv_start"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="30dp"
+                        android:fontFamily="@font/pd_light"
+                        android:gravity="center"
+                        android:textColor="#ffffff"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_end"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="30dp"
+                        android:fontFamily="@font/pd_light"
+                        android:gravity="center"
+                        android:textColor="#ffffff"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/pd_light"
+                android:text="완료한 인증"
+                android:textColor="@color/main"
+                android:textSize="16sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:visibility="gone" />
+
+            <GridView
+                android:id="@+id/grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:horizontalSpacing="15dp"
+                android:numColumns="3"
+                android:scrollbars="vertical"
+                android:verticalSpacing="15dp"
+                android:visibility="gone">
+
+            </GridView>
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/pd_light"
+                android:text="통계"
+                android:textColor="@color/main"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/pd_regu"
+                android:gravity="center_horizontal"
+                android:text="2023 / 5 / 23"
+                android:textColor="@color/main"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_preceed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/pd_regu"
+                android:gravity="center_horizontal"
+                android:text="20일째 도전 중"
+                android:textColor="@color/main"
+                android:textSize="20sp" />
+
+            <com.jaygoo.widget.RangeSeekBar
+                android:id="@+id/seekbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+
+
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                app:rsb_gravity="center"
+                app:rsb_indicator_arrow_size="10dp"
+                app:rsb_indicator_background_color="@color/main"
+                app:rsb_indicator_margin="30dp"
+                app:rsb_indicator_padding_bottom="10dp"
+                app:rsb_indicator_padding_left="10dp"
+                app:rsb_indicator_padding_right="10dp"
+                app:rsb_indicator_padding_top="10dp"
+                app:rsb_indicator_radius="5dp"
+                app:rsb_indicator_show_mode="alwaysShow"
+
+                app:rsb_indicator_text_color="#ffffff"
+                app:rsb_indicator_text_size="16sp"
+                app:rsb_mode="single"
+
+                app:rsb_progress_drawable="@drawable/progress_fill"
+                app:rsb_progress_drawable_default="@drawable/progess"
+                app:rsb_progress_height="40dp"
+                app:rsb_thumb_height="0dp"
+                app:rsb_thumb_width="0dp" />
+
+            <TextView
+                android:id="@+id/tv_progress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-25dp"
+                android:fontFamily="@font/pd_regu"
+                android:gravity="center_horizontal"
+                android:textColor="@color/main"
+                android:textSize="16sp" />
+
+            <com.assist.dojeon.view.RangeCalenderView
+                android:id="@+id/calender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="40dp"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/pd_light"
+                android:text="그래프"
+                android:textColor="@color/main"
+                android:textSize="16sp" />
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/ylabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/pd_regu"
+                    android:gravity="center"
+                    android:rotation="-90"
+                    android:text="몸무게" />
+
+                <TextView
+                    android:id="@+id/xlabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/chart"
+                    android:layout_centerInParent="false"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="30dp"
+                    android:fontFamily="@font/pd_regu"
+                    android:text="날짜" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginStart="-15dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_toEndOf="@id/ylabel"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

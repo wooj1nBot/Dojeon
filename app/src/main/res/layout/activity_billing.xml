@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.BillingActivity">
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        android:id="@+id/sliding_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F6F6F6"
+        android:gravity="bottom"
+        app:umanoDragView="@id/drawer"
+        app:umanoOverlay="true"
+        app:umanoPanelHeight="0dp"
+        app:umanoShadowHeight="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/skip"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="false"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/roboto"
+                android:text="Premium Membership"
+                android:textColor="#444444"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView12"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="false"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/pd_light"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="4sp"
+                android:text="후원은 저희에게 큰 힘이 됩니다\n추후 더 나은 서비스로 보답하겠습니다 !"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/skip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="false"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:clickable="true"
+                android:fontFamily="@font/pd_light"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:paddingStart="20dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="20dp"
+                android:text="다음에 할게요"
+                android:textSize="16sp"
+                android:visibility="visible" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView21"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="50dp"
+                android:visibility="visible"
+                app:cardBackgroundColor="#F4F8FA"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginEnd="30dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/load"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/animation_view"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center_horizontal"
+                                    android:visibility="visible"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_fileName="sad.json"
+                                    app:lottie_loop="true"></com.airbnb.lottie.LottieAnimationView>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="20dp"
+                                    android:fontFamily="@font/pd_medium"
+                                    android:gravity="center"
+                                    android:lineSpacingExtra="4sp"
+                                    android:text="구독 중인 서비스가 없습니다\n구독으로 프리미엄 혜택을 얻어보세요!"
+                                    android:textColor="#919191"
+                                    android:textSize="15sp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="5dp"
+                                android:fontFamily="@font/pd_medium"
+                                android:text="구독중인 서비스"
+                                android:textColor="@color/main"
+                                android:textSize="16sp"
+                                android:visibility="gone" />
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cd_sub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:visibility="gone"
+                                app:cardCornerRadius="10dp"
+                                app:cardElevation="0dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginTop="15dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:orientation="horizontal">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:gravity="center_vertical"
+                                            android:orientation="vertical"
+                                            android:paddingStart="30dp">
+
+                                            <TextView
+                                                android:id="@+id/sub_type"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:fontFamily="@font/pd_light"
+                                                android:text="월간 구독"
+                                                android:textColor="#1F72A0" />
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="5dp"
+                                                android:orientation="horizontal">
+
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center_vertical"
+                                                    android:fontFamily="@font/pd_light"
+                                                    android:text="₩"
+                                                    android:textColor="@color/main"
+                                                    android:textSize="20sp" />
+
+                                                <TextView
+                                                    android:id="@+id/sub_price"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center_vertical"
+                                                    android:layout_marginStart="5dp"
+                                                    android:fontFamily="@font/pd_regu"
+                                                    android:text="5000"
+                                                    android:textColor="@color/main"
+                                                    android:textSize="20sp" />
+
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="5dp"
+                                                    android:layout_marginEnd="5dp"
+                                                    android:fontFamily="@font/roboto"
+                                                    android:text="/"
+                                                    android:textColor="#000000"
+                                                    android:textSize="22sp" />
+
+                                                <TextView
+                                                    android:id="@+id/sub_type_txt"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center_vertical"
+                                                    android:fontFamily="@font/pd_regu"
+                                                    android:text="월"
+                                                    android:textColor="@color/main"
+                                                    android:textSize="16sp" />
+                                            </LinearLayout>
+
+                                            <TextView
+                                                android:id="@+id/sub_date"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center_vertical"
+                                                android:layout_marginTop="10dp"
+                                                android:fontFamily="@font/pd_regu"
+                                                android:text="결제 예정일: 2023년 11월 2일"
+                                                android:textColor="@color/main"
+                                                android:textSize="14sp" />
+
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="90dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_vertical"
+                                            android:orientation="vertical">
+
+                                            <ImageView
+                                                android:id="@+id/check_sub"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="50dp"
+                                                android:padding="10dp"
+                                                android:src="@drawable/check" />
+
+                                            <TextView
+                                                android:id="@+id/sub_state"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center_horizontal"
+                                                android:layout_marginTop="5dp"
+                                                android:fontFamily="@font/pd_regu"
+                                                android:text="구독 중"
+                                                android:textColor="@color/main"
+                                                android:textSize="14sp" />
+
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:id="@+id/sub_cancel"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="40dp"
+                                        android:layout_marginBottom="5dp"
+                                        android:clickable="true"
+                                        android:fontFamily="@font/pd_regu"
+                                        android:foreground="?android:attr/selectableItemBackground"
+                                        android:gravity="center"
+                                        android:text="구독 취소"
+                                        android:textColor="#8C8C8C"
+                                        android:textSize="13sp" />
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/purchase"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginBottom="50dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/main"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tv_pur"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/pd_light"
+                                android:text="구입하기"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/drawer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView21"
+            android:layout_alignParentBottom="true"
+            android:visibility="visible"
+            app:cardBackgroundColor="#F4F8FA"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:fontFamily="@font/pd_medium"
+                        android:text="구독하기"
+                        android:textColor="@color/main"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:id="@+id/close"
+                        android:layout_width="80dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="end"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/close_48px" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cd1"
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:layout_marginTop="30dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical"
+                                android:paddingStart="30dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/pd_light"
+                                    android:text="월간 구독"
+                                    android:textColor="#1F72A0" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:fontFamily="@font/pd_light"
+                                        android:text="₩"
+                                        android:textColor="@color/main"
+                                        android:textSize="20sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginStart="5dp"
+                                        android:fontFamily="@font/pd_regu"
+                                        android:text="5000"
+                                        android:textColor="@color/main"
+                                        android:textSize="20sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:fontFamily="@font/roboto"
+                                        android:text="/"
+                                        android:textColor="#000000"
+                                        android:textSize="22sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:fontFamily="@font/pd_regu"
+                                        android:text="월"
+                                        android:textColor="@color/main"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/check1"
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:padding="23dp"
+                                android:src="@drawable/check" />
+
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cd2"
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginBottom="25dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical"
+                                android:paddingStart="30dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/pd_light"
+                                    android:text="연간 구독"
+                                    android:textColor="#1F72A0" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:fontFamily="@font/pd_light"
+                                        android:text="₩"
+                                        android:textColor="@color/main"
+                                        android:textSize="20sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginStart="5dp"
+                                        android:fontFamily="@font/pd_regu"
+                                        android:text="36,000"
+                                        android:textColor="@color/main"
+                                        android:textSize="20sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:fontFamily="@font/roboto"
+                                        android:text="/"
+                                        android:textColor="#000000"
+                                        android:textSize="22sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:fontFamily="@font/pd_regu"
+                                        android:text="연"
+                                        android:textColor="@color/main"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/check2"
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:padding="23dp"
+                                android:src="@drawable/check" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cd3"
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:layout_marginBottom="60dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical"
+                                android:paddingStart="30dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/pd_light"
+                                    android:text="평생 구독"
+                                    android:textColor="#1F72A0" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:fontFamily="@font/pd_light"
+                                        android:text="₩"
+                                        android:textColor="@color/main"
+                                        android:textSize="20sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginStart="5dp"
+                                        android:fontFamily="@font/pd_regu"
+                                        android:text="70,000"
+                                        android:textColor="@color/main"
+                                        android:textSize="20sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:fontFamily="@font/roboto"
+                                        android:text="/"
+                                        android:textColor="#000000"
+                                        android:textSize="22sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:fontFamily="@font/pd_regu"
+                                        android:text="일시불"
+                                        android:textColor="@color/main"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/check3"
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:padding="23dp"
+                                android:src="@drawable/check" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+</RelativeLayout>

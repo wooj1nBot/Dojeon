@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.SettingFragment">
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        android:id="@+id/sliding_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:background="#F6F6F6"
+        app:umanoDragView="@id/drawer"
+        app:umanoPanelHeight="0dp"
+        app:umanoOverlay="true"
+        app:umanoShadowHeight="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="100dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:padding="20dp"
+                    android:src="@drawable/back"
+                    android:textColor="@color/main" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/pd_regu"
+                    android:gravity="center"
+                    android:text="도전 설정"
+                    android:textColor="@color/main"
+                    android:textSize="24sp" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/alarm"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="40dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:textColor="@color/main"
+                    app:cardBackgroundColor="#F6F6F6"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:fontFamily="@font/pd_regu"
+                            android:text="알람 설정"
+                            android:textColor="@color/main"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/toggle_alarm"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:padding="12dp"
+                            android:src="@drawable/toggle_on" />
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TimePicker
+                    android:id="@+id/timepicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:theme="@style/RYZZE_DATE_PICKER"
+                    android:timePickerMode="spinner"
+                    android:visibility="visible" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/range"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="40dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="#F6F6F6"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tv_range"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_toStartOf="@id/imageView5"
+                            android:fontFamily="@font/pd_light"
+                            android:text="30일"
+                            android:textColor="@color/main"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:fontFamily="@font/pd_regu"
+                            android:text="도전 기간"
+                            android:textColor="@color/main"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="30dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="10dp"
+                            android:padding="10dp"
+                            android:src="@drawable/period" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/drawer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/done"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="end"
+                    android:fontFamily="@font/pd_regu"
+                    android:gravity="center_vertical|end"
+                    android:paddingEnd="30dp"
+                    android:text="완료"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:textColor="#006FAD"
+                    android:textSize="18sp" />
+
+                <NumberPicker
+                    android:id="@+id/picker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="80dp"
+                    android:theme="@style/RYZZE_DATE_PICKER">
+                </NumberPicker>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+</FrameLayout>
